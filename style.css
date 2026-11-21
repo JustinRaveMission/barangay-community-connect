@@ -1,6 +1,11 @@
 /* Required font: Ink Free primary, Times New Roman fallback */
+* {
+    box-sizing: border-box;
+    font-family: 'Ink Free', 'Times New Roman', Times, serif;
+}
+
 body {
-    font-family: 'Ink Free', 'Times New Roman', serif;
+    font-family: 'Ink Free', 'Times New Roman', Times, serif;
     background-color: #f9f9f6;
     color: #222222;
     margin: 0;
@@ -8,16 +13,53 @@ body {
     line-height: 1.6;
 }
 
+/* Keyframe Animations */
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulseAlert {
+    0% {
+        box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(192, 57, 43, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(192, 57, 43, 0);
+    }
+}
+
 header {
     background-color: #2b5876;
     color: #ffffff;
     text-align: center;
     padding: 30px 20px;
+    animation: fadeSlideDown 0.6s ease-out;
 }
 
 header h1 {
     margin: 0;
     font-size: 2.4em;
+    letter-spacing: 0.5px;
 }
 
 main {
@@ -32,6 +74,14 @@ section {
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    animation: fadeSlideUp 0.6s ease-out;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(43, 88, 118, 0.12);
 }
 
 h2 {
@@ -54,6 +104,13 @@ h2 {
     padding: 15px;
     border-radius: 6px;
     border-left: 4px solid #2b5876;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    background-color: #e2edf5;
+    box-shadow: 0 4px 10px rgba(43, 88, 118, 0.15);
 }
 
 .form-group {
@@ -63,22 +120,38 @@ h2 {
 }
 
 input[type="text"] {
-    font-family: 'Ink Free', 'Times New Roman', serif;
-    font-size: 1em;
+    font-family: 'Ink Free', 'Times New Roman', Times, serif;
+    font-size: 1.05em;
     padding: 10px;
     flex: 1;
     border: 1px solid #2b5876;
     border-radius: 5px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #1e3f56;
+    box-shadow: 0 0 0 3px rgba(43, 88, 118, 0.2);
 }
 
 button {
-    font-family: 'Ink Free', 'Times New Roman', serif;
-    font-size: 1em;
+    font-family: 'Ink Free', 'Times New Roman', Times, serif;
+    font-size: 1.05em;
     font-weight: bold;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.97);
 }
 
 .btn-primary {
@@ -88,16 +161,25 @@ button {
 
 .btn-primary:hover {
     background-color: #1e3f56;
+    box-shadow: 0 4px 8px rgba(30, 63, 86, 0.25);
 }
 
 .btn-alert {
     background-color: #c0392b;
     color: #ffffff;
     width: 100%;
+    animation: pulseAlert 2s infinite;
 }
 
 .btn-alert:hover {
     background-color: #962d22;
+    animation: none;
+}
+
+/* Smooth fade-in for newly added volunteers */
+#volunteerList li {
+    padding: 4px 0;
+    animation: fadeSlideUp 0.35s ease-out;
 }
 
 footer {
