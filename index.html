@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Community Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Barangay Community Connect</h1>
+        <p>Local Bulletin, Emergency Directory, & Volunteer Hub</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>📢 Community Announcements</h2>
+            <ul>
+                <li><strong>Free Medical & Dental Mission:</strong> Saturday, 8:00 AM at the Barangay Covered Court.</li>
+                <li><strong>Garbage Collection:</strong> Biodegradable (Mon/Wed/Fri) | Non-Biodegradable (Tue/Thu).</li>
+                <li><strong>Libreng Sakay:</strong> Available for Senior Citizens and PWDs from 6:00 AM to 9:00 AM.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🚨 Local Emergency Hotlines</h2>
+            <div class="hotline-grid">
+                <div class="card">
+                    <strong>Barangay Hall Desk</strong><br>
+                    (02) 8123-4567 / 0917-123-4567
+                </div>
+                <div class="card">
+                    <strong>Community Health Center</strong><br>
+                    (02) 8765-4321 / 0918-765-4321
+                </div>
+                <div class="card">
+                    <strong>Police & Fire Station</strong><br>
+                    911 / 0919-555-8888
+                </div>
+            </div>
+            <button id="emergencyBtn" class="btn-alert">⚠️ Need Immediate Assistance? Click Here</button>
+        </section>
+
+        <section>
+            <h2>🤝 Community Volunteer Sign-Up</h2>
+            <p>Join our Sunday Clean-Up Drive (6:30 AM at the Plaza). Sign up below to pledge your help!</p>
+            <div class="form-group">
+                <input type="text" id="volunteerName" placeholder="Enter your full name...">
+                <button id="joinBtn" class="btn-primary">Count Me In!</button>
+            </div>
+            <p><strong>Total Volunteers Signed Up:</strong> <span id="volunteerCount">12</span> neighbors</p>
+            <ul id="volunteerList">
+                <li>Juan Dela Cruz (Clean-Up Drive)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>For the Community | Created by Justin Rave Mission, fajjar.muhammad, & Jafet Guinto</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
